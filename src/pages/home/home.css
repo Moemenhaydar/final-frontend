@@ -40,7 +40,7 @@
 }
 .home-contain .home-h1 {
   color: var(--secondary);
-  font-size: 3rem;
+  font-size:clamp(1.8rem, 4vw, 3rem);
   line-height: 4rem;
   text-transform: uppercase;
   width: 50%;
