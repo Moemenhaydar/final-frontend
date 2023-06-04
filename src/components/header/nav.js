@@ -7,27 +7,25 @@ const nav = () => {
       <img src={logo} alt="" className="nav-logo" />
       <ul className="nav-ul">
         <li className="nav-li">
-          <a href="" className="nav-a">
+          <a href="/" className="nav-a">
             Home
           </a>
         </li>
         <li className="nav-li">
-          <a href="" className="nav-a">
+          <a href="/product" className="nav-a">
             Product
           </a>
         </li>
+
         <li className="nav-li">
-          <a href="" className="nav-a">
-            Our Store
-          </a>
-        </li>
-        <li className="nav-li">
-          <a href="" className="nav-a">
+          <a href="/about" className="nav-a">
             About Us
           </a>
         </li>
+        <button className="nav-btn" >
+         <a className="nav-a" href="/login">Login</a> 
+        </button>
       </ul>
-      
     </div>
   );
 };

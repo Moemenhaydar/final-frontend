@@ -6,16 +6,19 @@
   justify-content: center;
   align-items: center;
 }
-.about-content .about-image {
+
+.about-content .about-img {
   height: auto;
   width: 600px;
   padding: 0 10px;
 }
+
 .about-text {
   width: 550px;
   max-width: 100%;
   padding: 0 10px;
 }
+
 .about-content {
   width: 1280px;
   max-width: 95%;
@@ -25,11 +28,13 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .about-text .about-h1 {
   color: var(--secondary);
   font-size: 75px;
   text-transform: capitalize;
 }
+
 .about-text .about-h5 {
   color: var(--accent-light);
   font-size: 30px;
@@ -39,27 +44,30 @@
   letter-spacing: 2px;
 }
 
-.about-text .about-p{
-    color: var(--primary);
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 1px;
-    margin-bottom: 45px;
-
+.about-text .about-p {
+  color: var(--primary);
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 45px;
 }
+
+/* Media queries for smaller screens */
 @media screen and (max-width: 1180px) {
-    .about-contain{
-      width: 100%;
-      height: auto;
-      padding: 70px 0;
-    }
+  .about-contain {
+    height: auto;
+    padding: 70px 0;
   }
-  @media  screen and (max-width: 650px) {
-    .about-contain .about-content .about-img{
-      margin-bottom:35px;
-    } 
-    .about-text .about-h1{
-      font-size: 60px;
-      margin-bottom: 25px;
-    }
+}
+
+@media screen and (max-width: 650px) {
+  .about-contain .about-content .about-img {
+    margin-bottom: 35px;
+    width: 300px;
   }
+  
+  .about-text .about-h1 {
+    font-size: 50px;
+    margin-bottom: 25px;
+  }
+}
