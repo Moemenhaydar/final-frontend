@@ -14,7 +14,8 @@ import Visiter from "./routes/visiter.js";
 import About from "../src/pages/about/about.js";
 import ProductVisitor from "./components/products/productvisitor";
 // import Admin from "./routes/admin.js"
-import Contact from "./components/contact/contactUs.js"
+import Contact from "./components/contact/contactUs.js";
+import Signup from "./components/register/register";
 
 function App() {
   return (
@@ -50,11 +51,12 @@ function App() {
           </Route>{" "}
         </Route>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<Visiter />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<ProductVisitor />} />
-          <Route path="/contact" element={< Contact/>} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
     </div>

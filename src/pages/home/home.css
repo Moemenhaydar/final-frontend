@@ -70,6 +70,12 @@
   transition: 0.5s ease-in-out;
 }
 
+.home-contain .home-btn:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+  cursor: pointer;
+}
+
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .home-contain {

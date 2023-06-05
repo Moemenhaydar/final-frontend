@@ -22,8 +22,15 @@ const nav = () => {
             About Us
           </a>
         </li>
-        <button className="nav-btn" >
-         <a className="nav-a" href="/login">Login</a> 
+        <button className="nav-btn">
+          <a className="nav-a" href="/login">
+            Login
+          </a>
+        </button>
+        <button className="nav-btn">
+          <a className="nav-a" href="/signup">
+            Register
+          </a>
         </button>
       </ul>
     </div>

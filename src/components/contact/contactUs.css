@@ -99,9 +99,7 @@
   font-size: 18px;
   color: var(--primary);
 }
-/* .form-control .form-input ::placeholder-shown{
-  display:none ;
-} */
+
 
 .form-control .form-input:focus,
 .form-control .form-input:valid {
@@ -128,4 +126,20 @@
 .form-control .form-input:valid + .form-label .formm-span {
   color: var(--secondary);
   transform: translateY(-30px);
+}
+@media screen and (max-width: 768px) {
+  .contact-us-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-us-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .form-control {
+    width: 100%;
+  }
 }

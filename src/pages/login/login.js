@@ -58,7 +58,7 @@ const LoginPage = () => {
           defaultValue={route}
           onChange={(e) => setRoute(e.target.value)}
           className="select-login "
-          >
+          > 
           <option value={"admin"} className="option-login">
             Admin
           </option>
