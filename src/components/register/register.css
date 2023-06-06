@@ -1,3 +1,11 @@
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--secondary);
+}
+
 .register-contain {
   display: flex;
   flex-direction: column;

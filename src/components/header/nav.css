@@ -13,6 +13,7 @@
 .nav-contain .nav-ul {
   display: flex;
   justify-content: flex-end; /* Adjusted alignment for responsiveness */
+  align-items: center;
   gap: 10px;
 }
 
@@ -28,7 +29,7 @@
 
 .nav-ul .nav-li .nav-a {
   display: block;
-  transition: .5s;
+  transition: 0.5s;
   text-decoration: none;
   font-size: 1rem; /* Adjusted font size for responsiveness */
   color: var(--accent-light);
@@ -36,12 +37,26 @@
 
 .nav-btn {
   background-color: var(--secondary);
-  color: var(--accent-light);
+  color: var(--accent);
   font-size: 1rem; /* Adjusted font size for responsiveness */
   padding: 0.8rem 1.5rem; /* Adjusted padding for responsiveness */
   border: none;
   border-radius: 10px;
   transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: var(--primary);
+}
+
+.nav-btn:hover a {
+  color: var(--secondary);
+}
+
+.nav-btn a {
+  color: var(--primary);
+  text-decoration: none;
 }
 
 /* Media query for smaller screens */

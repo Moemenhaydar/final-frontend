@@ -29,7 +29,7 @@ function Footer() {
           </li>
          
           <li className="li-footer">
-            <a className="a-footer" href="contactus/contactus.js">
+            <a className="a-footer"         >
               <Link className="Link" to="/contact">
               Contact Us</Link>
             </a>
