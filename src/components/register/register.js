@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./register.css";
+import Swal from "sweetalert2";
 const RegisterForm = () => {
   // State variables for form inputs
   const [firstName, setFirstName] = useState("");
@@ -10,8 +11,16 @@ const RegisterForm = () => {
   const [adress, setAdress] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [data, setData] = useState([]);
+  // Form submit
 
-  // Form submit handler
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((pre) => ({
+      ...pre,
+      [name]: value,
+    }));
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -19,15 +28,11 @@ const RegisterForm = () => {
         `https://mobilia32.onrender.com/owner/
 
       `,
-        {
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password,
-        }
+        data
       )
       .then((res) => {
         console.log(res);
+        Swal.fire("Good job!", "You clicked the button!", "success");
       })
       .catch((err) => {
         console.log(err);
@@ -36,21 +41,49 @@ const RegisterForm = () => {
 
   return (
     <div className="register-wrapper">
-    <div className="register-container">
-      <form className="register-contain" onSubmit={handleSubmit}>
-        <p className="title">Register</p>
-        <p className="message">Signup now and get full access to our app.</p>
-        <div className="flex">
+      <div className="register-container">
+        <form className="register-contain" onSubmit={handleSubmit}>
+          <p className="title">Register</p>
+          <p className="message">Signup now and get full access to our app.</p>
+          <div className="flex">
+            <label className="label">
+              <input
+                required
+                name="name"
+                placeholder=""
+                type="text"
+                className="input"
+                value={data.name}
+                onChange={handleChange}
+              />
+              <span className="span">Name</span>
+            </label>
+
+            <label className="label">
+              <input
+                required
+                placeholder="Enter Your telephone"
+                type="tel"
+                name="phone"
+                className="input"
+                value={data.phone}
+                onChange={handleChange}
+              />
+              <span className="span">Phone</span>
+            </label>
+          </div>
+
           <label className="label">
             <input
               required
               placeholder=""
-              type="text"
+              name="email"
+              type="email"
               className="input"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={data.email}
+              onChange={handleChange}
             />
-            <span className="span">Firstname</span>
+            <span className="span">Email</span>
           </label>
 
           <label className="label">
@@ -58,84 +91,39 @@ const RegisterForm = () => {
               required
               placeholder=""
               type="text"
+              name="address"
               className="input"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={data.address}
+              onChange={handleChange}
             />
-            <span className="span">Lastname</span>
+            <span className="span">Address</span>
           </label>
-        </div>
 
-        <label className="label">
-          <input
-            required
-            placeholder=""
-            type="email"
-            className="input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <span className="span">Email</span>
-        </label>
-        <label className="label">
-          <input
-            required
-            placeholder=""
-            type="number"
-            className="input"
-            value={PhoneNumber}
-            onChange={(e) => setNumber(e.target.value)}
-          />
-          <span className="span">Phone-number</span>
-        </label>
-        <label className="label">
-          <input
-            required
-            placeholder=""
-            type="text"
-            className="input"
-            value={adress}
-            onChange={(e) => setAdress(e.target.value)}
-          />
-          <span className="span">Address</span>
-        </label>
+          <label className="label">
+            <input
+              required
+              placeholder=""
+              type="password"
+              className="input"
+              value={data.password}
+              name="password"
+              onChange={handleChange}
+            />
+            <span className="span">Password</span>
+          </label>
 
-        <label className="label">
-          <input
-            required
-            placeholder=""
-            type="password"
-            className="input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <span className="span">Password</span>
-        </label>
+          <button type="button" onClick={handleSubmit} className="submit">
+            Submit
+          </button>
 
-        <label className="label">
-          <input
-            required
-            placeholder=""
-            type="password"
-            className="input"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <span className="span">Confirm password</span>
-        </label>
-
-        <button type="button" onClick={handleSubmit} className="submit">
-          Submit
-        </button>
-
-        <p className="signin">
-          Already have an account?{" "}
-          <a href="/signin" className="a">
-            Sign in
-          </a>
-        </p>
-      </form>
-    </div>
+          <p className="signin">
+            Already have an account?{" "}
+            <a href="/signin" className="a">
+              Sign in
+            </a>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import "../../pages/home/home.css"
 import About from "../../pages/about/about";
 import SuggestProduct from "../../components/suggestProduct/suggestproduct.js";
-import Product from "../../components/products/productvisitor.js";
+import Product from "../../components/products/productvisitor.js";  
 const Home = () => {
   return (
 <>
